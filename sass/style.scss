@@ -476,6 +476,56 @@ body {
 }
 
 // -------------------------------
+//  			FOOTER
+// -------------------------------
+.footer {
+	color: c.$pure-white;
+	background-color: c.$dark;
+
+	.wrapper {
+		padding: 6em 2em 2em;
+	}
+
+	&__box {
+		font-size: 1.4rem;
+
+		&-desktop {
+			display: none;
+		}
+
+		&-title {
+			margin-bottom: 1em;
+			font-size: 3rem;
+			text-transform: uppercase;
+		}
+
+		&-social {
+			margin: 2em 0 1em;
+		}
+
+		&-link {
+			padding: 0em 0.3em;
+			color: c.$pure-white;
+			font-size: 3.6rem;
+			transition: color 0.3s;
+
+			&:first-child {
+				padding-left: 0;
+			}
+
+			&:hover {
+				color: c.$light-white;
+			}
+		}
+	}
+
+	&__bottom-text {
+		padding: 2em;
+		text-align: center;
+	}
+}
+
+// -------------------------------
 //  		MEDIA QUERIES
 // -------------------------------
 @media (min-width: 576px) {
@@ -589,6 +639,42 @@ body {
 		&__card {
 			margin: 1em;
 			width: 45%;
+		}
+	}
+
+	.footer {
+		&__boxes {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		&__box {
+			margin: 0 2em;
+			width: 25%;
+
+			&:first-child {
+				width: 50%;
+			}
+
+			&-desktop {
+				display: block;
+			}
+
+			&-title {
+				font-size: 2.4rem;
+			}
+
+			&-list {
+				list-style: none;
+
+				&-item {
+					margin-bottom: 1em;
+
+					a {
+						color: c.$light-white;
+					}
+				}
+			}
 		}
 	}
 }
