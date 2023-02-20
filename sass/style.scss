@@ -1,10 +1,9 @@
 @use './reset';
-@use './colors';
+@use './colors' as c;
 @use './components';
-@use './mixins' as *;
+@use './mixins' as m;
 
 body {
-	// font-family: 'Dancing Script', cursive;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 1.6rem;
 }
@@ -41,7 +40,7 @@ body {
 	&__bars,
 	&__bars::before,
 	&__bars::after {
-		@include burgerBtn;
+		@include m.burgerBtn;
 	}
 
 	&__bars {
@@ -56,6 +55,86 @@ body {
 			top: 27px;
 			width: 30%;
 			transition-delay: 0.1s;
+		}
+	}
+}
+
+// HEADER
+.header {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 2em;
+	height: 75vh;
+	text-align: center;
+	color: c.$pure-white;
+	@include m.heroImages('../img/palm-g70da0a838_640.jpg');
+	background-attachment: scroll;
+
+	&__heading {
+		font-family: 'Dancing Script', cursive;
+		font-size: 4.8rem;
+		font-weight: 300;
+	}
+
+	&__text {
+		font-size: 1.4rem;
+	}
+
+	&__btn {
+		margin-top: 2em;
+		padding: 0.8em 1.6em;
+		font-size: 1.4rem;
+		background: c.$pure-white;
+		border: none;
+		border-radius: 8px;
+		color: c.$dark;
+		text-transform: uppercase;
+		cursor: pointer;
+
+		&::before {
+			background-color: c.$light-white;
+		}
+	}
+}
+
+// -------------------------------
+//  		MEDIA QUERIES
+// -------------------------------
+@media (min-width: 768px) {
+	.white-block {
+		width: 45%;
+		height: 50px;
+	}
+
+	.header {
+		&__heading {
+			font-size: 6.6rem;
+		}
+
+		&__text {
+			font-size: 2.2rem;
+		}
+
+		&__btn {
+			font-size: 1.6rem;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.burger-btn {
+		top: 50px;
+		right: 50px;
+	}
+
+	.header {
+		background-image: c.$blue-gradient, url('../img/palm-g5f9385399_1920.jpg');
+
+		&__heading {
+			font-size: 10rem;
 		}
 	}
 }
