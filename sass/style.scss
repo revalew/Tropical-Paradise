@@ -62,6 +62,20 @@ body {
 	}
 }
 
+.bg-shadow {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100px;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.black-bars-color,
+.black-bars-color::before,
+.black-bars-color::after {
+	background-color: c.$dark;
+}
+
 .nav {
 	position: fixed;
 	top: 0;
