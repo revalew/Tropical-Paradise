@@ -1,45 +1,95 @@
-* {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+html,
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  font-family: "Ubuntu", sans-serif;
-  overflow: hidden;
-  color: #fff;
-  background: linear-gradient(10deg, #2483ff 60%, #2c6afb 60%);
+  height: 100%;
 }
 
-.card {
-  width: 400px;
-  background-color: #ddd;
-  border-radius: 8px;
-  overflow: hidden;
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
 }
-.card__img {
-  width: 100%;
+
+a {
+  text-decoration: none;
 }
-.card__body {
-  padding: 10px 20px;
+
+img {
+  height: auto;
 }
-.card__text {
-  margin: 20px 0;
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
 }
-.card__btns {
-  display: flex;
-  justify-content: space-around;
-}
-.card__btn {
-  padding: 10px 20px;
-  border: 1px solid #000;
-  border-radius: 8px;
+
+button {
+  border: none;
   cursor: pointer;
 }
-.card__btn--highlight {
-  background-color: yellowgreen;
+
+textarea {
+  resize: vertical;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.6rem;
+}
+
+.burger-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 1em;
+  background: none;
+  border: 1px solid transparent;
+  z-index: 1000;
+}
+.burger-btn:focus {
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+}
+.burger-btn:hover .burger-btn__bars::before,
+.burger-btn:hover .burger-btn__bars::after {
+  width: 100%;
+}
+.burger-btn__box {
+  position: relative;
+  width: 40px;
+  height: 30px;
+}
+.burger-btn__bars, .burger-btn__bars::before, .burger-btn__bars::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  height: 3px;
+  background-color: #fff;
+  transition: width 0.3s;
+}
+.burger-btn__bars {
+  width: 100%;
+}
+.burger-btn__bars::after {
+  top: 13px;
+  width: 60%;
+}
+.burger-btn__bars::before {
+  top: 27px;
+  width: 30%;
+  transition-delay: 0.1s;
 }/*# sourceMappingURL=style.css.map */
