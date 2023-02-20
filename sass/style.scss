@@ -427,6 +427,54 @@ body {
 	}
 }
 
+// CONTACT SECTION
+.contact {
+	position: relative;
+	background-color: c.$light-white;
+	overflow: hidden;
+
+	.white-block-left {
+		background-color: c.$dark;
+	}
+
+	&__form,
+	&__form-top {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__form {
+		&-label {
+			margin-bottom: 0.5em;
+			text-transform: uppercase;
+		}
+
+		&-input {
+			@include m.contactForm;
+		}
+
+		&-textarea {
+			@include m.contactForm;
+			min-height: 150px;
+		}
+
+		&-btn {
+			align-self: flex-end;
+			padding: 1em;
+			width: 100%;
+			max-width: 300px;
+			color: c.$pure-white;
+			border: none;
+			border-radius: 8px;
+			background-color: c.$main-color;
+
+			&::before {
+				background-color: c.$secondary-color;
+			}
+		}
+	}
+}
+
 // -------------------------------
 //  		MEDIA QUERIES
 // -------------------------------
